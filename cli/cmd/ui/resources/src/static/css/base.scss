@@ -1,0 +1,8 @@
+@import '/node_modules/modern-normalize/modern-normalize.css';
+@import '/node_modules/@cds/core/global.min.css';
+@import '/node_modules/@cds/city/css/bundles/default.min.css';
+@import '/node_modules/@cds/core/styles/theme.dark.min.css';
+
+.welcome {
+  padding: var(--cds-global-space-12);
+}

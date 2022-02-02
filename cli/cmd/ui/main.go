@@ -124,7 +124,8 @@ func launch(cmd *cobra.Command, args []string) {
 			Homepage:       "index.html",
 			MessageHandler: handleMessages,
 			Options: &astilectron.WindowOptions{
-				BackgroundColor: astikit.StrPtr("#333"),
+				TitleBarStyle: astikit.StrPtr("hidden"),
+				BackgroundColor: astikit.StrPtr("#1b2b32"),
 				Center:          astikit.BoolPtr(true),
 				Height:          astikit.IntPtr(700),
 				Width:           astikit.IntPtr(700),

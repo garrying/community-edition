@@ -1,0 +1,20 @@
+{
+  "name": "app",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "watch": "parcel serve index.html --dist-dir ../app",
+    "build": "parcel build index.html --dist-dir ../app --public-url .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@parcel/transformer-sass": "^2.2.1",
+    "parcel": "^2.2.1"
+  },
+  "dependencies": {
+    "@cds/city": "^1.1.0",
+    "@cds/core": "^5.6.2"
+  }
+}
