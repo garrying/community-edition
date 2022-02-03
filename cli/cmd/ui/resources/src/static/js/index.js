@@ -2,8 +2,15 @@ import '@cds/core/button/register.js'
 import '@cds/core/icon/register.js'
 import { ClarityIcons } from '@cds/core/icon/icon.service'
 import { userIcon } from '@cds/core/icon/shapes/user'
+import { plusCircleIcon } from '@cds/core/icon/shapes/plus-circle'
+import { folderOpenIcon } from '@cds/core/icon/shapes/folder-open'
+import { terminalIcon } from '@cds/core/icon/shapes/terminal'
+import '@cds/core/progress-circle/register.js'
 
 ClarityIcons.addIcons(userIcon)
+ClarityIcons.addIcons(plusCircleIcon)
+ClarityIcons.addIcons(folderOpenIcon)
+ClarityIcons.addIcons(terminalIcon)
 
 const index = {
   about: function (html) {
