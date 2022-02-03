@@ -10,29 +10,38 @@
 <body cds-text="body" cds-theme="dark" style="-webkit-user-select: none;" class="welcome">
     <div class="title-bar"></div>
 
-    <div class="message" cds-layout="vertical gap:lg">
-      <h1 cds-text="heading">Welcome to the Tanzu Community Edition Launcher</h1>
-      <p cds-text="body">Tanzu Community Edition (TCE) is VMware's Open Source Kubernetes distribution. The installer will deploy a temporary cluster on your local machine to bootstrap a management cluster on your desired target.</p>
-    </div>
-
-    <div class="message" cds-layout="vertical gap:lg">
-      <cds-button><cds-icon shape="plus-circle"></cds-icon>Create a Cluster</cds-button>
-      <cds-button><cds-icon shape="folder-open"></cds-icon>Add an Existing Cluster</cds-button>
-      <cds-button disabled><cds-icon shape="terminal"></cds-icon>Install Tanzu Command Line Tool</cds-button>
-    </div>
-
-    <footer class="footer" cds-layout="vertical gap:lg">
-      <div cds-layout="horizontal gap:md align:vertical-center">
-        <cds-progress-circle status="info"></cds-progress-circle> <p cds-text="secondary">Installing Virtual Machine...</p>
+    <section class="view" id="splash">
+      <div class="message" cds-layout="vertical gap:lg">
+        <h1 cds-text="heading">Welcome to the Tanzu Community Edition Launcher</h1>
+        <p cds-text="body">Tanzu Community Edition (TCE) is VMware's Open Source Kubernetes distribution. The installer will deploy a temporary cluster on your local machine to bootstrap a management cluster on your desired target.</p>
       </div>
-      <div cds-layout="horizontal gap:md align:vertical-center">
-        <p cds-text="secondary" class="version">v0.0.1</p>
-        <p cds-text="secondary" class="version"><a href="" cds-text="link static">Report an issue</a></p>
+
+      <div class="message" cds-layout="vertical gap:lg">
+        <a href="#create"><cds-button><cds-icon shape="plus-circle"></cds-icon>Create a Cluster</cds-button></a>
+        <cds-button><cds-icon shape="folder-open"></cds-icon>Add an Existing Cluster</cds-button>
+        <cds-button disabled><cds-icon shape="terminal"></cds-icon>Install Tanzu Command Line Tool</cds-button>
       </div>
-    </footer>
-    <div class="splash">
-      <img src="static/images/welcome-intro-01-dk.svg" alt="">
-    </div>
+
+      <footer class="footer" cds-layout="vertical gap:lg">
+        <div cds-layout="horizontal gap:md align:vertical-center">
+          <cds-progress-circle status="info"></cds-progress-circle> <p cds-text="secondary">Installing Virtual Machine...</p>
+        </div>
+        <div cds-layout="horizontal gap:md align:vertical-center">
+          <p cds-text="secondary" class="version">v0.0.1</p>
+          <p cds-text="secondary" class="version"><a href="" cds-text="link static">Report an issue</a></p>
+        </div>
+      </footer>
+      <div class="splash-graphic">
+        <img src="static/images/welcome-intro-01-dk.svg" alt="">
+      </div>
+    </section>
+
+    <section class="view" id="create">
+      <div class="message" cds-layout="vertical gap:lg">
+        <h1 cds-text="heading">Create a cluster</h1>
+      </div>
+      <a href="#splash"><cds-button>Cancel</cds-button></a>
+    </section>
 
     <script type="module" src="static/js/index.js"></script>
     <script src="static/lib/astiloader/astiloader.js"></script>

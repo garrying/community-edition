@@ -12,6 +12,11 @@ ClarityIcons.addIcons(plusCircleIcon)
 ClarityIcons.addIcons(folderOpenIcon)
 ClarityIcons.addIcons(terminalIcon)
 
+// TODO: Add a router
+if (window.location.pathname === '/') {
+  window.location.hash = '#splash'
+}
+
 const index = {
   about: function (html) {
     const c = document.createElement('div')
