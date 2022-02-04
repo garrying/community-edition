@@ -1,104 +1,97 @@
-import '@cds/core/button/register.js'
-import '@cds/core/icon/register.js'
-import { ClarityIcons } from '@cds/core/icon/icon.service'
-import { userIcon } from '@cds/core/icon/shapes/user'
-import { plusCircleIcon } from '@cds/core/icon/shapes/plus-circle'
-import { folderOpenIcon } from '@cds/core/icon/shapes/folder-open'
-import { terminalIcon } from '@cds/core/icon/shapes/terminal'
-import '@cds/core/progress-circle/register.js'
+import React from 'react'
+import ReactDOM from 'react-dom'
+import { HashRouter } from 'react-router-dom'
+import App from './components/app'
 
-ClarityIcons.addIcons(userIcon)
-ClarityIcons.addIcons(plusCircleIcon)
-ClarityIcons.addIcons(folderOpenIcon)
-ClarityIcons.addIcons(terminalIcon)
+ReactDOM.render(
+  <HashRouter>
+    <App />
+  </HashRouter>,
+  document.getElementById('root')
+)
 
-// TODO: Add a router
-if (window.location.pathname === '/') {
-  window.location.hash = '#splash'
-}
+// const index = {
+//   about: function (html) {
+//     const c = document.createElement('div')
+//     c.innerHTML = html
+//     asticode.modaler.setContent(c)
+//     asticode.modaler.show()
+//   },
+//   addFolder (name, path) {
+//     const div = document.createElement('div')
+//     div.className = 'dir'
+//     div.onclick = function () { index.explore(path) }
+//     div.innerHTML = '<i class="fa fa-folder"></i><span>' + name + '</span>'
+//     document.getElementById('dirs').appendChild(div)
+//   },
+//   init: function () {
+//     // Init
+//     asticode.loader.init()
+//     asticode.modaler.init()
+//     asticode.notifier.init()
 
-const index = {
-  about: function (html) {
-    const c = document.createElement('div')
-    c.innerHTML = html
-    asticode.modaler.setContent(c)
-    asticode.modaler.show()
-  },
-  addFolder (name, path) {
-    const div = document.createElement('div')
-    div.className = 'dir'
-    div.onclick = function () { index.explore(path) }
-    div.innerHTML = '<i class="fa fa-folder"></i><span>' + name + '</span>'
-    document.getElementById('dirs').appendChild(div)
-  },
-  init: function () {
-    // Init
-    asticode.loader.init()
-    asticode.modaler.init()
-    asticode.notifier.init()
+//     // Wait for astilectron to be ready
+//     document.addEventListener('astilectron-ready', function () {
+//       // Listen
+//       index.listen()
 
-    // Wait for astilectron to be ready
-    document.addEventListener('astilectron-ready', function () {
-      // Listen
-      index.listen()
+//       // Explore default path
+//       index.explore()
+//     })
+//   },
+//   explore: function (path) {
+//     // Create message
+//     const message = { name: 'explore' }
+//     if (typeof path !== 'undefined') {
+//       message.payload = path
+//     }
 
-      // Explore default path
-      index.explore()
-    })
-  },
-  explore: function (path) {
-    // Create message
-    const message = { name: 'explore' }
-    if (typeof path !== 'undefined') {
-      message.payload = path
-    }
+//     // Send message
+//     asticode.loader.show()
+//     astilectron.sendMessage(message, function (message) {
+//       // Init
+//       asticode.loader.hide()
 
-    // Send message
-    asticode.loader.show()
-    astilectron.sendMessage(message, function (message) {
-      // Init
-      asticode.loader.hide()
+//       // Check error
+//       if (message.name === 'error') {
+//         asticode.notifier.error(message.payload)
+//         return
+//       }
 
-      // Check error
-      if (message.name === 'error') {
-        asticode.notifier.error(message.payload)
-        return
-      }
+//       // Process path
+//       document.getElementById('path').innerHTML = message.payload.path
 
-      // Process path
-      document.getElementById('path').innerHTML = message.payload.path
+//       // Process dirs
+//       document.getElementById('dirs').innerHTML = ''
+//       for (let i = 0; i < message.payload.dirs.length; i++) {
+//         index.addFolder(message.payload.dirs[i].name, message.payload.dirs[i].path)
+//       }
 
-      // Process dirs
-      document.getElementById('dirs').innerHTML = ''
-      for (let i = 0; i < message.payload.dirs.length; i++) {
-        index.addFolder(message.payload.dirs[i].name, message.payload.dirs[i].path)
-      }
-
-      // Process files
-      document.getElementById('files_count').innerHTML = message.payload.files_count
-      document.getElementById('files_size').innerHTML = message.payload.files_size
-      document.getElementById('files').innerHTML = ''
-      if (typeof message.payload.files !== 'undefined') {
-        document.getElementById('files_panel').style.display = 'block'
-        const canvas = document.createElement('canvas')
-        document.getElementById('files').append(canvas)
-        new Chart(canvas, message.payload.files)
-      } else {
-        document.getElementById('files_panel').style.display = 'none'
-      }
-    })
-  },
-  listen: function () {
-    astilectron.onMessage(function (message) {
-      switch (message.name) {
-        case 'about':
-          index.about(message.payload)
-          return { payload: 'payload' }
-          break
-        case 'check.out.menu':
-          asticode.notifier.info(message.payload)
-          break
-      }
-    })
-  }
-}
+//       // Process files
+//       document.getElementById('files_count').innerHTML = message.payload.files_count
+//       document.getElementById('files_size').innerHTML = message.payload.files_size
+//       document.getElementById('files').innerHTML = ''
+//       if (typeof message.payload.files !== 'undefined') {
+//         document.getElementById('files_panel').style.display = 'block'
+//         const canvas = document.createElement('canvas')
+//         document.getElementById('files').append(canvas)
+//         new Chart(canvas, message.payload.files)
+//       } else {
+//         document.getElementById('files_panel').style.display = 'none'
+//       }
+//     })
+//   },
+//   listen: function () {
+//     astilectron.onMessage(function (message) {
+//       switch (message.name) {
+//         case 'about':
+//           index.about(message.payload)
+//           return { payload: 'payload' }
+//           break
+//         case 'check.out.menu':
+//           asticode.notifier.info(message.payload)
+//           break
+//       }
+//     })
+//   }
+// }
