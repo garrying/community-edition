@@ -14,7 +14,7 @@ ClarityIcons.addIcons(plusCircleIcon)
 ClarityIcons.addIcons(folderOpenIcon)
 ClarityIcons.addIcons(terminalIcon)
 
-const Home = () => {
+const Launcher = () => {
   return (
     <>
       <div className='message' cds-layout='vertical gap:lg'>
@@ -24,7 +24,7 @@ const Home = () => {
 
       <div className='message' cds-layout='vertical gap:lg'>
         <Link to='/create'><cds-button><cds-icon shape='plus-circle' />Create a Cluster</cds-button></Link>
-        <cds-button><cds-icon shape='folder-open' />Add an Existing Cluster</cds-button>
+        <Link to='/add'><cds-button><cds-icon shape='folder-open' />Add an Existing Cluster</cds-button></Link>
         <cds-button disabled><cds-icon shape='terminal' />Install Tanzu Command Line Tool</cds-button>
       </div>
 
@@ -46,4 +46,4 @@ const Home = () => {
   )
 }
 
-export default Home
+export default Launcher

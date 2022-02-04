@@ -35,3 +35,19 @@
 .version {
   color: var(--cds-global-typography-color-200);
 }
+
+
+.header {
+  position: absolute;
+  padding: calc(var(--δ4) + 33px);
+  top: 0;
+  left: 0;
+  background-color: #0f171c;
+
+  .title {
+    color: #fafafa;
+    letter-spacing: .01em;
+    line-height: 3rem;
+    text-decoration: none;
+  }
+}
