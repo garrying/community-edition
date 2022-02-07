@@ -106,7 +106,12 @@ func launch(cmd *cobra.Command, args []string) {
 						return
 					},
 				},
-				{Role: astilectron.MenuItemRoleClose},
+				{Role: astilectron.MenuItemRoleQuit},
+			},
+		},{
+			Label: astikit.StrPtr("Help"),
+			SubMenu: []*astilectron.MenuItemOptions{
+				{Role: astilectron.MenuItemRoleHelp},
 			},
 		}},
 		OnWait: func(_ *astilectron.Astilectron, ws []*astilectron.Window, _ *astilectron.Menu, _ *astilectron.Tray, _ *astilectron.Menu) error {
@@ -127,8 +132,10 @@ func launch(cmd *cobra.Command, args []string) {
 				TitleBarStyle: astikit.StrPtr("hidden"),
 				BackgroundColor: astikit.StrPtr("#1b2b32"),
 				Center:          astikit.BoolPtr(true),
-				Height:          astikit.IntPtr(700),
-				Width:           astikit.IntPtr(700),
+				Width:           astikit.IntPtr(960),
+				MinWidth:        astikit.IntPtr(960),
+				Height:          astikit.IntPtr(580),
+				MinHeight:       astikit.IntPtr(580),
 			},
 		}},
 	}); err != nil {

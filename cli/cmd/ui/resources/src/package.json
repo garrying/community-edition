@@ -4,6 +4,7 @@
   "description": "",
   "scripts": {
     "watch": "parcel serve index.html --dist-dir ../app",
+    "prebuild": "rm -rf ../app/*",
     "build": "parcel build index.html --dist-dir ../app --public-url .",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
