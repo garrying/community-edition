@@ -67,3 +67,7 @@ docs/site/resources
 
 # UI plugin files
 cli/cmd/ui/bind*
+
+.DS_Store
+node_modules
+.parcel-cache
