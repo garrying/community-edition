@@ -8,6 +8,7 @@ import { folderOpenIcon } from '@cds/core/icon/shapes/folder-open'
 import { terminalIcon } from '@cds/core/icon/shapes/terminal'
 import SplashGraphic from '../../images/welcome-intro-01-dk.svg'
 import '@cds/core/progress-circle/register.js'
+import ButtonWC from './cluster/react-wc-ref'
 
 ClarityIcons.addIcons(userIcon)
 ClarityIcons.addIcons(plusCircleIcon)
@@ -29,6 +30,7 @@ const Launcher = () => {
       </div>
 
       <footer className='footer' cds-layout='vertical gap:lg'>
+        <ButtonWC />
         <div cds-layout='horizontal gap:md align:vertical-center'>
           <cds-progress-circle status='info' /> <p cds-text='secondary'>Installing Virtual Machine...</p>
         </div>
