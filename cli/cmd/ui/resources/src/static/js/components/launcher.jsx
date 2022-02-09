@@ -15,7 +15,7 @@ ClarityIcons.addIcons(plusCircleIcon)
 ClarityIcons.addIcons(folderOpenIcon)
 ClarityIcons.addIcons(terminalIcon)
 
-const Launcher = () => {
+const Launcher = (props) => {
   return (
     <>
       <div className='message' cds-layout='vertical gap:lg'>
@@ -35,7 +35,7 @@ const Launcher = () => {
           <cds-progress-circle status='info' /> <p cds-text='secondary'>Installing Virtual Machine...</p>
         </div>
         <div cds-layout='horizontal gap:md align:vertical-center'>
-          <p cds-text='secondary' className='version'>v0.0.1</p>
+          <p cds-text='secondary' className='version'>{`v${props.version}`}</p>
           <p cds-text='secondary' className='version'><a href='' cds-text='link static'>Report an issue</a></p>
         </div>
       </footer>

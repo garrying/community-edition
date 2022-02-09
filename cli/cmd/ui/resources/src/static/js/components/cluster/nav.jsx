@@ -29,7 +29,7 @@ const Nav = () => {
       </cds-modal>
       <header className='header' cds-layout='horizontal gap:lrg align:vertical-center p-l:l p-r:l p-b:md'>
         <div className='branding'>
-          <Link to='/' className='title' cds-text='message'>
+          <Link to='/launcher' className='title' cds-text='message'>
             <cds-icon shape='vm-bug' solid size='36' cds-layout='m-r:md' />
             Create a cluster
           </Link>

@@ -7,7 +7,7 @@ const Add = () => {
       <div className='message' cds-layout='vertical gap:lg'>
         <h1 cds-text='heading'>Add an existing cluster</h1>
       </div>
-      <Link to='/'><cds-button>Cancel</cds-button></Link>
+      <Link to='/launcher'><cds-button>Cancel</cds-button></Link>
     </>
   )
 }

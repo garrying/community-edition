@@ -23,19 +23,35 @@
 
 .footer {
   position: absolute;
-  bottom: var(--cds-global-space-12);
+  right: 0;
+  left: 0;
+  bottom: 0;
+  padding-left: var(--cds-global-space-12);
+  padding-bottom: var(--cds-global-space-12);
 }
 
 .splash-graphic {
   position: absolute;
   bottom: 0;
   right: 0;
+  
+  img {
+    user-select: none;
+  }
+
+  &.preflight-graphic {
+    opacity: 25%;
+    z-index: -1;
+  }
 }
 
 .version {
   color: var(--cds-global-typography-color-200);
 }
 
+.preflight {
+  height: calc(90vh - var(--cds-global-space-12));
+}
 
 .header {
   position: absolute;

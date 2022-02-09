@@ -7,10 +7,10 @@ class ButtonWC extends Component {
     this.state = { isToggleOn: true }
 
     // This binding is necessary to make `this` work in the callback
-    this.activateLasers = this.activateLasers.bind(this)
+    this.handleActivateLasers = this.handleActivateLasers.bind(this)
   }
 
-  activateLasers (e) {
+  handleActivateLasers (e) {
     console.log('You clicked submit.')
     this.setState(prevState => ({
       isToggleOn: !prevState.isToggleOn
@@ -19,7 +19,7 @@ class ButtonWC extends Component {
 
   render () {
     return (
-      <cds-button action='outline' size='sm'onClick={this.activateLasers}>State debug button: {this.state.isToggleOn ? 'ON' : 'OFF'}</cds-button>
+      <cds-button action='outline' size='sm' onClick={this.handleActivateLasers}>State debug button: {this.state.isToggleOn ? 'ON' : 'OFF'}</cds-button>
     )
   }
 }

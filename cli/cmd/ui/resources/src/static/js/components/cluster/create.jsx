@@ -9,7 +9,7 @@ const Create = () => {
       <div className='message' cds-layout='vertical gap:lg p-t:xxl'>
         <h1 cds-text='heading'>Create a cluster</h1>
       </div>
-      <Link to='/'><cds-button>Cancel</cds-button></Link>
+      <Link to='/launcher'><cds-button>Cancel</cds-button></Link>
     </>
   )
 }
