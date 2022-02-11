@@ -15,9 +15,9 @@ const Nav = () => {
   }
   return (
     <>
-      <cds-modal aria-labelledby=',-title' id=',' hidden>
+      <cds-modal aria-labelledby=',-title' id=',' hidden closable='false'>
         <cds-modal-header>
-          <h3 cds-text='section' cds-first-focus id='default-modal-title'>Settings</h3>
+          <h3 cds-text='section' cds-first-focus="true" id='default-modal-title'>Settings</h3>
         </cds-modal-header>
         <cds-modal-content>
           <p cds-text='body'>Place holder text for the default sized modal example.</p>
