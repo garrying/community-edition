@@ -31,24 +31,13 @@ const RolloverBanner = () => {
     // Rollover banner config entries populate a line item and corresponding detail for display
     const rolloverBannerConfig: Array<RolloverConfigItem> = [
         {
-            logo: TceLogo,
-            icon: '',
-            backgroundImage: TceExperienceBg,
-            title: 'Community-supported experience',
-            description:
-                'Tanzu Community Edition is an open source distribution of Tanzu that can be installed and ' +
-                'configured in minutes on your local workstation.',
-            actionText: 'Visit the project on GitHub',
-            actionUrl: 'https://github.com/vmware-tanzu/community-edition',
-        },
-        {
             logo: '',
             icon: 'cluster',
             backgroundImage: ClusterExperience,
             title: 'How do I decide which type of cluster to create?',
             description:
                 'There are two different types of Tanzu clusters that can be deployed; managed and unmanaged clusters' +
-                'Managed clusters are for producton-ready enviroments that features a Management Cluster and Workload Clusters' +
+                'Managed clusters are for production-ready environments that features a Management Cluster and Workload Clusters' +
                 'Unmanaged Clusters offer Tanzu environments for development and experimentation.',
             actionText: 'Learn more about types of clusters',
             actionUrl: 'https://tanzucommunityedition.io/docs/main/architecture/#tanzu-clusters',
@@ -60,7 +49,7 @@ const RolloverBanner = () => {
             title: 'How do I manage my clusters at scale?',
             description:
                 'Easily manage clusters on multiple-clouds with Tanzu Mission Control, a central hub for operators. ' +
-                'Bringing consistancy to your platform by connecting your clusters.',
+                'Bringing consistency to your platform by connecting your clusters.',
             actionText: 'Learn more about Tanzu Mission Control',
             actionUrl: 'https://tanzu.vmware.com/mission-control',
         },
@@ -74,6 +63,18 @@ const RolloverBanner = () => {
                 'operators to run and manage Kubernetes across multiple cloud providers.',
             actionText: 'Learn more about Tanzu Application Platform',
             actionUrl: 'https://tanzu.vmware.com/application-platform',
+        },
+        {
+            logo: TceLogo,
+            icon: '',
+            backgroundImage: TceExperienceBg,
+            title: 'Where can I get support and contribute?',
+            description:
+                'Find support in our community of users and contributors. ' +
+                'Submit issues and contribute on GitHub. Join contributors on Kubernetes Slack and connect with others in ' +
+                'real time at our community meetings.',
+            actionText: 'Learn more about joining our community',
+            actionUrl: 'https://tanzucommunityedition.io/community/',
         },
     ];
 
